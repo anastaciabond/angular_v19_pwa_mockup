@@ -1,0 +1,10 @@
+mat-drawer-container {
+  height: 100%;
+}
+$app-sidenav-width: 200px;
+.app-sidenav {
+  width: $app-sidenav-width;
+}
+sidenav-menu {
+  display: block;
+}
