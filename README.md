@@ -13,7 +13,15 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. 
+The application will automatically reload whenever you modify any of the source files.
+
+To work with **Service Worker** in the live-reload functionality, run:
+```
+npx ng serve --configuration=production
+```
+This flag allows to reload all changes in the app without building its "dist" folder. Additionally 
+open dev-tools, click on tab Application > Service Workers and check the "Offline" checkbox switch on.
 
 ## Code scaffolding
 
