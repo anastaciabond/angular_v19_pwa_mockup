@@ -1,1 +1,12 @@
-<p>sidenav-menu works!</p>
+<div class="block-title align-center">
+  <p>Admin Tool</p>
+</div>
+<mat-nav-list>
+  @for (page of pages; track page) {
+    <mat-list-item>
+      <div [routerLink]="[page.link]" routerLinkActive="nav-menu-active" class="mat-mdc-list-item-line">
+        <span matListItemIcon class="material-symbols-outlined">{{ page.name_icon }}</span>&nbsp;{{ page.name }}
+      </div>
+    </mat-list-item>
+  }
+</mat-nav-list>
