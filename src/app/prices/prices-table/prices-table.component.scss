@@ -1,0 +1,9 @@
+$padding: 16px;
+:host {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - calc(var(--app-toolbar-standard-height) + 15px));
+  padding-right: $padding;
+  padding-left: $padding;
+  padding-bottom: 15px;
+}

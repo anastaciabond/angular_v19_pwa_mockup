@@ -1,10 +1,16 @@
+.block-body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
 mat-drawer-container {
   height: 100%;
 }
-$app-sidenav-width: 200px;
 .app-sidenav {
-  width: $app-sidenav-width;
+  width: var(--app-sidenav-width);
+  border-top-right-radius: var(--app-sidenav-menu-border-top-right-radius);
+  border-bottom-right-radius: var(--app-sidenav-menu-border-top-right-radius);
 }
-sidenav-menu {
-  display: block;
+.block-content {
+  height: 100%;
 }

@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  height: var(--app-toolbar-standard-height);
+}
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
