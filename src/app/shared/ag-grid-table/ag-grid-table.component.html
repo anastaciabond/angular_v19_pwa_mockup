@@ -1,9 +1,40 @@
-<div class="content" style="width: 100%; height: 100%;">
-  <!-- The AG Grid component, with Dimensions, CSS Theme, Row Data, and Column Definition -->
-  <ag-grid-angular
-    style="width: 100%; height: 100%;"
-    [rowData]="rowData"
-    [columnDefs]="colDefs"
-    [defaultColDef]="defaultColDef"
-  />
+<div class="content block-fill-container">
+  <div style="display: flex;">
+    <div class="example-header">
+      <mat-form-field class="example-form-field">
+        <mat-label>Filter by any column</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="externalFilterValue"
+          id="filter-text-box"
+          (input)="onFilterTextBoxChanged(externalFilterValue)"
+        >
+        @if (externalFilterValue) {
+          <button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="clearFilter('')"
+            [matTooltip]="'Clear filter'"
+            [matTooltipPosition]="'above'"
+          >
+            <span matListItemIcon class="material-symbols-outlined">close</span>
+          </button>
+        }
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="block-ag-grid-wrapper block-fill-container">
+    <ag-grid-angular
+      style="width: 100%; height: 100%;"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      [paginationAutoPageSize]="true"
+      (gridReady)="onGridReady($event)"
+      (rowClicked)="onRowClicked($event)"
+    />
+  </div>
 </div>
